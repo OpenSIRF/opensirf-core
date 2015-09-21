@@ -109,7 +109,6 @@ public class SIRFCatalog {
 	private ContainerInformation containerInformation;
 
 	@XmlElementWrapper(name="objectsSet")
-	//private HashMap<String, PreservationObjectInformation> objectInformation;
 	private IndexedObjectInformationSet objectInformation;
 
 }
