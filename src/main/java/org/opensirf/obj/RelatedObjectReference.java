@@ -31,12 +31,42 @@
  */
 package org.opensirf.obj;
 
-public class RelatedObjectReference extends ReferenceElement {
+public class RelatedObjectReference {
 	public RelatedObjectReference() {
 		super();
 	}
 
 	public RelatedObjectReference(String referenceType, String referenceRole, String referenceValue) {
-		super(referenceType, referenceRole, referenceValue);
+		this.referenceType = referenceType;
+		this.referenceRole = referenceRole;
+		this.referenceValue = referenceValue;
 	}
+
+	public String getReferenceType() {
+		return referenceType;
+	}
+
+	public void setReferenceType(String referenceType) {
+		this.referenceType = referenceType;
+	}
+
+	public String getReferenceRole() {
+		return referenceRole;
+	}
+
+	public void setReferenceRole(String referenceRole) {
+		this.referenceRole = referenceRole;
+	}
+
+	public String getReferenceValue() {
+		return referenceValue;
+	}
+
+	public void setReferenceValue(String referenceValue) {
+		this.referenceValue = referenceValue;
+	}
+
+	private String referenceType;
+	private String referenceRole;
+	private String referenceValue;
 }

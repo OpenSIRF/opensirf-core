@@ -32,7 +32,7 @@
 
 package org.opensirf.container;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 
 import javax.xml.bind.annotation.XmlType;
 
@@ -43,7 +43,7 @@ import org.opensirf.audit.ContainerAuditLog;
 public class ContainerInformation {
 
 	public ContainerInformation() {
-		containerAuditLog = new HashSet<ContainerAuditLog>();
+		containerAuditLog = new ArrayList<ContainerAuditLog>();
 		containerSpecification = new ContainerSpecification();
 	}
 
@@ -71,11 +71,11 @@ public class ContainerInformation {
 		this.containerState = containerState;
 	}
 
-	public HashSet<ContainerAuditLog> getContainerAuditLog() {
+	public ArrayList<ContainerAuditLog> getContainerAuditLog() {
 		return containerAuditLog;
 	}
 
-	public void setContainerAuditLog(HashSet<ContainerAuditLog> containerAuditLogObjectIds) {
+	public void setContainerAuditLog(ArrayList<ContainerAuditLog> containerAuditLogObjectIds) {
 		this.containerAuditLog = containerAuditLogObjectIds;
 	}
 	
@@ -95,6 +95,6 @@ public class ContainerInformation {
 
 	private ContainerProvenanceReference containerProvenanceReference;
 		
-	private HashSet<ContainerAuditLog> containerAuditLog;
+	private ArrayList<ContainerAuditLog> containerAuditLog;
 
 }

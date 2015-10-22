@@ -31,13 +31,13 @@
  */
 package org.opensirf.obj;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 
 import javax.xml.bind.annotation.XmlElement;
 
 public class Extension {
 	public Extension() {
-		objectExtensionPairs = new HashSet<ExtensionPair>();
+		objectExtensionPairs = new ArrayList<ExtensionPair>();
 	}
 
 	public Extension(String objectExtensionOrganization, String objectExtensionDescription) {
@@ -46,11 +46,11 @@ public class Extension {
 		this.objectExtensionDescription = objectExtensionDescription;
 	}
 
-	public HashSet<ExtensionPair> getObjectExtensionPairs() {
+	public ArrayList<ExtensionPair> getObjectExtensionPairs() {
 		return objectExtensionPairs;
 	}
 
-	public void setObjectExtensionPairs(HashSet<ExtensionPair> objectExtensionPairs) {
+	public void setObjectExtensionPairs(ArrayList<ExtensionPair> objectExtensionPairs) {
 		this.objectExtensionPairs = objectExtensionPairs;
 	}
 
@@ -71,7 +71,7 @@ public class Extension {
 	}
 
 	@XmlElement(name="objectExtensionPair")
-	private HashSet<ExtensionPair> objectExtensionPairs;
+	private ArrayList<ExtensionPair> objectExtensionPairs;
 	private String objectExtensionOrganization;
 	private String objectExtensionDescription;
 }

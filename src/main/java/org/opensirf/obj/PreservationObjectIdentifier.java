@@ -31,16 +31,16 @@
  */
 package org.opensirf.obj;
 
-import java.util.HashSet;
+import java.util.ArrayList;
 
 import javax.xml.bind.annotation.XmlElement;
 
 public class PreservationObjectIdentifier {
 	public PreservationObjectIdentifier() {
-		objectNames = new HashSet<PreservationObjectName>();
+		objectNames = new ArrayList<PreservationObjectName>();
 	}
 
-	public HashSet<PreservationObjectName> getObjectNames() {
+	public ArrayList<PreservationObjectName> getObjectNames() {
 		return objectNames;
 	}
 
@@ -73,7 +73,7 @@ public class PreservationObjectIdentifier {
 	}
 
 	@XmlElement(name="objectName")
-	private HashSet<PreservationObjectName> objectNames;
+	private ArrayList<PreservationObjectName> objectNames;
 
 	private PreservationObjectVersionIdentifier objectVersionIdentifier;
 

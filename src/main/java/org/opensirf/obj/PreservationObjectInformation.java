@@ -33,69 +33,45 @@ package org.opensirf.obj;
 
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
-import java.util.HashSet;
+import java.util.ArrayList;
 
 import javax.xml.bind.annotation.XmlTransient;
 import javax.xml.bind.annotation.XmlType;
 
 import org.opensirf.audit.PreservationObjectAuditLog;
 
-@XmlType(propOrder={"objectIdentifiers", "objectCreationDate", "objectLastModifiedDate", "objectLastAccessedDate", "objectRelatedObjects", "packagingFormat", "objectFixity", "objectRetention", "objectAuditLog", "objectExtension", "versionIdentifierUUID"})
-
-/* 
- * 
-	@XmlTransient
-	private String versionIdentifierUUID;
-
-	private HashSet<PreservationObjectIdentifier> objectIdentifiers;
-
-	private HashSet<RelatedObjects> objectRelatedObjects;
-
-	private HashSet<Extension> objectExtension;
-
-	@XmlElement(name="objectAuditLog")
-	private HashSet<PreservationObjectAuditLog> objectAuditLogs;
-
-	private String objectCreationDate;
-
-	private String objectLastModifiedDate;
-
-	private String objectLastAccessedDate;
-
-	private PackagingFormat packagingFormat;
-	
-	private FixityInformation objectFixity;
-	
-	private Retention objectRetention;
- */
+@XmlType(propOrder={"objectIdentifiers", "objectCreationDate", "objectLastModifiedDate",
+		"objectLastAccessedDate", "objectRelatedObjects", "packagingFormat", "objectFixity",
+		"objectRetention", "objectAuditLog", "objectExtension", "versionIdentifierUUID"})
 
 public class PreservationObjectInformation {
 	public PreservationObjectInformation() {
-	}
-
-	public PreservationObjectInformation(String packagingFormat) {
-		objectIdentifiers = new HashSet<PreservationObjectIdentifier>();
+		objectIdentifiers = new ArrayList<PreservationObjectIdentifier>();
 		final String currentTimestamp = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'").format(new GregorianCalendar().getTime());
 		objectCreationDate = currentTimestamp;
 		objectLastAccessedDate = currentTimestamp;
 		objectLastModifiedDate = currentTimestamp;
 		versionIdentifierUUID = null;
 		objectFixity = null;
-		objectRelatedObjects = new HashSet<RelatedObjects>();
-		objectAuditLog = new HashSet<PreservationObjectAuditLog>();
-		objectExtension = new HashSet<Extension>();
+		objectRelatedObjects = new ArrayList<RelatedObjects>();
+		objectAuditLog = new ArrayList<PreservationObjectAuditLog>();
+		objectExtension = new ArrayList<Extension>();
+	}
+
+	public PreservationObjectInformation(String packagingFormat) {
+		this();
 		this.packagingFormat = new PackagingFormat(packagingFormat);
 	}
 
-	public HashSet<Extension> getObjectExtension() {
+	public ArrayList<Extension> getObjectExtension() {
 		return objectExtension;
 	}
 
-	public void setObjectExtension(HashSet<Extension> objectExtension) {
+	public void setObjectExtension(ArrayList<Extension> objectExtension) {
 		this.objectExtension = objectExtension;
 	}
 
-	public HashSet<PreservationObjectIdentifier> getObjectIdentifiers() {
+	public ArrayList<PreservationObjectIdentifier> getObjectIdentifiers() {
 		return objectIdentifiers;
 	}
 
@@ -121,15 +97,15 @@ public class PreservationObjectInformation {
 		this.packagingFormat = packagingFormat;
 	}
 
-	public HashSet<PreservationObjectAuditLog> getObjectAuditLog() {
+	public ArrayList<PreservationObjectAuditLog> getObjectAuditLog() {
 		return objectAuditLog;
 	}
 
-	public void setObjectAuditLog(HashSet<PreservationObjectAuditLog> objectAuditLogObjectIds) {
+	public void setObjectAuditLog(ArrayList<PreservationObjectAuditLog> objectAuditLogObjectIds) {
 		this.objectAuditLog = objectAuditLogObjectIds;
 	}
 
-	public void setObjectIdentifiers(HashSet<PreservationObjectIdentifier> objectIdentifiers) {
+	public void setObjectIdentifiers(ArrayList<PreservationObjectIdentifier> objectIdentifiers) {
 		this.objectIdentifiers = objectIdentifiers;
 	}
 
@@ -165,11 +141,11 @@ public class PreservationObjectInformation {
 		this.versionIdentifierUUID = versionIdentifierUUID;
 	}
 
-	public HashSet<RelatedObjects> getObjectRelatedObjects() {
+	public ArrayList<RelatedObjects> getObjectRelatedObjects() {
 		return objectRelatedObjects;
 	}
 
-	public void setObjectRelatedObjects(HashSet<RelatedObjects> objectRelatedObjects) {
+	public void setObjectRelatedObjects(ArrayList<RelatedObjects> objectRelatedObjects) {
 		this.objectRelatedObjects = objectRelatedObjects;
 	}
 	
@@ -184,13 +160,13 @@ public class PreservationObjectInformation {
 	@XmlTransient
 	private String versionIdentifierUUID;
 
-	private HashSet<PreservationObjectIdentifier> objectIdentifiers;
+	private ArrayList<PreservationObjectIdentifier> objectIdentifiers;
 
-	private HashSet<RelatedObjects> objectRelatedObjects;
+	private ArrayList<RelatedObjects> objectRelatedObjects;
 
-	private HashSet<Extension> objectExtension;
+	private ArrayList<Extension> objectExtension;
 
-	private HashSet<PreservationObjectAuditLog> objectAuditLog;
+	private ArrayList<PreservationObjectAuditLog> objectAuditLog;
 
 	private String objectCreationDate;
 

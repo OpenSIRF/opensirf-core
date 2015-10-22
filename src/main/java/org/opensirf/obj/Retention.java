@@ -33,7 +33,6 @@ package org.opensirf.obj;
 
 public class Retention {
 	public Retention() {
-		
 	}
 	
 	public Retention(String retentionType, String retentionValue) {

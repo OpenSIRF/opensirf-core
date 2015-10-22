@@ -33,15 +33,16 @@ package org.opensirf.obj;
 
 import java.text.SimpleDateFormat;
 import java.util.GregorianCalendar;
-import java.util.HashSet;
+import java.util.ArrayList;
 
 public class FixityInformation {
 	public FixityInformation() {
+		lastCheckDate = new SimpleDateFormat("yyyyMMddHHmmss").format(new GregorianCalendar().getTime());
+		digestInformation = new ArrayList<DigestInformation>();
 	}
 
 	public FixityInformation(DigestInformation firstDigest) {
-		lastCheckDate = new SimpleDateFormat("yyyyMMddHHmmss").format(new GregorianCalendar().getTime());
-		digestInformation = new HashSet<DigestInformation>();
+		this();
 		digestInformation.add(firstDigest);
 	}
 
@@ -53,15 +54,15 @@ public class FixityInformation {
 		this.lastCheckDate = lastCheckDate;
 	}
 
-	public HashSet<DigestInformation> getDigestInformation() {
+	public ArrayList<DigestInformation> getDigestInformation() {
 		return digestInformation;
 	}
 
-	public void setDigestInformation(HashSet<DigestInformation> digestInformation) {
+	public void setDigestInformation(ArrayList<DigestInformation> digestInformation) {
 		this.digestInformation = digestInformation;
 	}
 
 	private String lastCheckDate;
 
-	private HashSet<DigestInformation> digestInformation;
+	private ArrayList<DigestInformation> digestInformation;
 }
