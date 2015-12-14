@@ -33,8 +33,11 @@ package org.opensirf.obj;
 
 import java.util.ArrayList;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Extension {
 	public Extension() {
 		objectExtensionPairs = new ArrayList<ExtensionPair>();
