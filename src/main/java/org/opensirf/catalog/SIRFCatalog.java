@@ -57,6 +57,7 @@ import org.opensirf.obj.Retention;
 public class SIRFCatalog {
 
 	public SIRFCatalog() {
+		this("","");
 	}
 
 	public SIRFCatalog(String catalogId, String containerName) {
@@ -102,6 +103,14 @@ public class SIRFCatalog {
 	
 	public IndexedObjectInformationSet getSirfObjects() {
 		return objectInformation;
+	}
+
+	public void setCatalogId(String catalogId) {
+		this.catalogId = catalogId;
+	}
+
+	public void setContainerInformation(ContainerInformation containerInformation) {
+		this.containerInformation = containerInformation;
 	}
 
 	private String catalogId;

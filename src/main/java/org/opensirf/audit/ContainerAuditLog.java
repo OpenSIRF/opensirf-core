@@ -34,6 +34,7 @@ package org.opensirf.audit;
 
 public class ContainerAuditLog {
 	public ContainerAuditLog() {
+		this.containerAuditLogReference = new ContainerAuditLogReference("", "");
 	}
 	
 	public ContainerAuditLogReference getContainerAuditLogReference() {

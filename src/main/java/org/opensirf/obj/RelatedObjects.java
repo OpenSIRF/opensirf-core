@@ -33,13 +33,14 @@ package org.opensirf.obj;
 
 public class RelatedObjects {
 	public RelatedObjects() {
+		objectRelatedObjectReference = new RelatedObjectReference("", "", "");
 	}
 
-	public RelatedObjectReference getObjectRelatedObjectsReference() {
+	public RelatedObjectReference getObjectRelatedObjectReference() {
 		return objectRelatedObjectReference;
 	}
 
-	public void setObjectRelatedObjectsReference(RelatedObjectReference objectRelatedObjectReference) {
+	public void setObjectRelatedObjectReference(RelatedObjectReference objectRelatedObjectReference) {
 		this.objectRelatedObjectReference = objectRelatedObjectReference;
 	}
 

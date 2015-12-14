@@ -38,6 +38,9 @@ import javax.xml.bind.annotation.XmlElement;
 public class PreservationObjectIdentifier {
 	public PreservationObjectIdentifier() {
 		objectNames = new ArrayList<PreservationObjectName>();
+		objectVersionIdentifier = new PreservationObjectVersionIdentifier("", "", "");
+		objectLogicalIdentifier = new PreservationObjectLogicalIdentifier("", "", "");
+		objectParentIdentifier = new PreservationObjectParentIdentifier("", "", "");
 	}
 
 	public ArrayList<PreservationObjectName> getObjectNames() {

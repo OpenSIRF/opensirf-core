@@ -179,6 +179,4 @@ public class PreservationObjectInformation {
 	private FixityInformation objectFixity;
 	
 	private Retention objectRetention;
-	
-	
 }

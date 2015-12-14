@@ -37,7 +37,6 @@ public class PreservationObjectName extends ObjectIdentifierElement {
 
 	public PreservationObjectName(String objectIdentifierType, String objectIdentifierLocale, String objectIdentifierValue) {
 		super(objectIdentifierType, objectIdentifierLocale, objectIdentifierValue);
-		// TODO Auto-generated constructor stub
 	}
 
 }

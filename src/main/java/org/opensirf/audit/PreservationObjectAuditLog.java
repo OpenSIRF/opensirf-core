@@ -34,6 +34,7 @@ package org.opensirf.audit;
 
 public class PreservationObjectAuditLog {
 	public PreservationObjectAuditLog() {
+		this.objectAuditLogReference = new AuditLogReference("", "", "");
 	}
 
 	public AuditLogReference getObjectAuditLogReference() {

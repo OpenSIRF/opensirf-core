@@ -38,7 +38,8 @@ import javax.xml.bind.annotation.XmlType;
 
 import org.opensirf.audit.ContainerAuditLog;
 
-@XmlType(propOrder={"containerSpecification", "containerIdentifier", "containerState", "containerProvenanceReference", "containerAuditLog"})
+@XmlType(propOrder={"containerSpecification", "containerIdentifier", "containerState",
+		"containerProvenanceReference", "containerAuditLog"})
 
 public class ContainerInformation {
 

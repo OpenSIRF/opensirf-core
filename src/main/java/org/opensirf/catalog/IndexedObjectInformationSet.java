@@ -70,6 +70,10 @@ public class IndexedObjectInformationSet extends AbstractSet<PreservationObjectI
 	public PreservationObjectInformation get(String s) {
 		return objectInformationMap.get(s);
 	}
+	
+	public HashMap<String, PreservationObjectInformation> getMap() {
+		return objectInformationMap;
+	}
 
 	private HashMap<String, PreservationObjectInformation> objectInformationMap;
 }

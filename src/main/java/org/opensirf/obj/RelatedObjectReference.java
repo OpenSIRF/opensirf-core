@@ -33,10 +33,10 @@ package org.opensirf.obj;
 
 public class RelatedObjectReference {
 	public RelatedObjectReference() {
-		super();
 	}
 
 	public RelatedObjectReference(String referenceType, String referenceRole, String referenceValue) {
+		super();
 		this.referenceType = referenceType;
 		this.referenceRole = referenceRole;
 		this.referenceValue = referenceValue;
