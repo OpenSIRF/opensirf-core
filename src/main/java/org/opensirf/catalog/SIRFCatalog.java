@@ -57,7 +57,6 @@ import org.opensirf.obj.Retention;
 public class SIRFCatalog {
 
 	public SIRFCatalog() {
-		this("","");
 	}
 
 	public SIRFCatalog(String catalogId, String containerName) {
