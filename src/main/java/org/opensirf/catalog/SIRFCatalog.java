@@ -79,16 +79,12 @@ public class SIRFCatalog {
 		
 		Retention r = new Retention("time_period", "forever");
 		provenanceInfo.setObjectRetention(r);
-		
-		//END OF UNIT TEST
-		//objectInformation.add(provenanceInfo);
 		objectInformation.put(provenanceInfo);
 
 		// Creating the container information
 		containerInformation = new ContainerInformation();
 		containerInformation.setContainerIdentifier(new ContainerIdentifier("containerIdentifier", "en", containerName));
 		containerInformation.setContainerState(new State(State.STATE_TYPE_CONTAINER_READY, State.TRUE));
-//		containerInformation.setContainerProvenance(new Provenance(SIRFContainer.SIRF_DEFAULT_PROVENANCE_MANIFEST_FILE, provenanceId));
 		containerInformation.setContainerProvenanceReference(new ContainerProvenanceReference("internal", "Provenance", provenanceVersionIdentifier));
 	}
 
