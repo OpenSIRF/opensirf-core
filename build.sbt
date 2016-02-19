@@ -1,17 +1,25 @@
-val baseVersion = SettingKey[String]("base-version", "Base version of the project without timestamp.")
-
 lazy val commonSettings = Seq(
-  organization := "org.opensirf"
+  organization := "org.opensirf.core",
+  version := "1.0.0",
+  name := "opensirf-core"
 )
 
 lazy val root = (project in file(".")).
   settings(commonSettings: _*).
   settings(
     name := "OpenSIRF Core",
-    baseVersion := "1.0.0",
+    version := "1.0.0",
     crossTarget := new java.io.File("target"),
-    version := new String(baseVersion.value) + "-" + new java.text.SimpleDateFormat("yyyyMMddHHmmss").format(new java.util.Date()).toString(),
     artifactName := { (sv: ScalaVersion, module: ModuleID, artifact: Artifact) =>
-        artifact.name + "-" + baseVersion.value + "." + artifact.extension
+        artifact.name + "-" + version.value + "." + artifact.extension
 	}
 )
+
+crossPaths := false
+publishTo := Some("Artifactory Realm" at "http://200.144.189.109:58082/artifactory/org.opensirf.core")
+credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
+publishMavenStyle := false
+isSnapshot := true
+
+publishArtifact in (Compile, packageDoc) := false
+publishArtifact in (Compile, packageSrc) := false
