@@ -16,7 +16,7 @@ lazy val root = (project in file(".")).
 )
 
 crossPaths := false
-publishTo := Some("Artifactory Realm" at "http://200.144.189.109:58082/artifactory/org.opensirf.core")
+publishTo := Some(Resolver.url("Artifactory Realm", new URL("http://200.144.189.109:58082/artifactory"))(Resolver.ivyStylePatterns))
 credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
 publishMavenStyle := false
 isSnapshot := true
