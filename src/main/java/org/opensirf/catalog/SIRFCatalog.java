@@ -67,16 +67,13 @@ public class SIRFCatalog {
 		// Creating the provenance PO and adding it to the catalog
 		PreservationObjectInformation provenanceInfo = new PreservationObjectInformation("none");
 		PreservationObjectIdentifier provenanceId = new PreservationObjectIdentifier();
-		String provenanceLogicalIdentifier = "http://snia.org/sirf/" + containerName + "-" + SIRFContainer.SIRF_DEFAULT_PROVENANCE_MANIFEST_FILE;
-		String provenanceVersionIdentifier = provenanceLogicalIdentifier + "-1.0";
+		String provenanceLogicalIdentifier = SIRFContainer.SIRF_DEFAULT_PROVENANCE_MANIFEST_FILE;
+		String provenanceVersionIdentifier = provenanceLogicalIdentifier;
 		provenanceId.setObjectLogicalIdentifier(new PreservationObjectLogicalIdentifier("logicalIdentifier", "en", provenanceLogicalIdentifier));
 		provenanceId.setObjectParentIdentifier(new PreservationObjectParentIdentifier("parentIdentifier", "en", "null"));
 		provenanceId.setObjectVersionIdentifier(new PreservationObjectVersionIdentifier("versionIdentifier", "en", provenanceVersionIdentifier));
 		provenanceId.putObjectName(new PreservationObjectName("name", "en", SIRFContainer.SIRF_DEFAULT_PROVENANCE_MANIFEST_FILE));
 		provenanceInfo.addObjectIdentifier(provenanceId);
-		// UNIT TEST
-		DigestInformation di = new DigestInformation("ObjectApi", "SHA-1", "7bec3092783ac1cffe4ff4b0c98958e2b776a4e2");
-		provenanceInfo.setObjectFixity(new FixityInformation(di));
 		
 		Retention r = new Retention("time_period", "forever");
 		provenanceInfo.setObjectRetention(r);
