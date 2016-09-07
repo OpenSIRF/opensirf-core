@@ -1,5 +1,5 @@
 lazy val commonSettings = Seq(
-  organization := "org.opensirf.core",
+  organization := "org.opensirf",
   version := "1.0.0",
   name := "opensirf-core"
 )

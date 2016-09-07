@@ -42,8 +42,6 @@ import org.opensirf.container.ContainerInformation;
 import org.opensirf.container.ContainerProvenanceReference;
 import org.opensirf.container.SIRFContainer;
 import org.opensirf.container.State;
-import org.opensirf.obj.DigestInformation;
-import org.opensirf.obj.FixityInformation;
 import org.opensirf.obj.PreservationObjectIdentifier;
 import org.opensirf.obj.PreservationObjectInformation;
 import org.opensirf.obj.PreservationObjectLogicalIdentifier;
