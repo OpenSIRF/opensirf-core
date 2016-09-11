@@ -32,7 +32,18 @@
 
 package org.opensirf.container;
 
+import java.util.Map;
+
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
+@XmlAccessorType(XmlAccessType.FIELD)
 public class MagicObject {
+	public MagicObject() { }
+	
 	public MagicObject(String containerSpecification, String sirfLevel, String sirfCatalogId) {
 		super();
 		this.containerSpecification = containerSpecification;
@@ -40,19 +51,43 @@ public class MagicObject {
 		this.sirfCatalogId = sirfCatalogId;
 	}
 
+	public MagicObject(Map<String,String> metadata)
+	{
+		sirfCatalogId = metadata.get("sirfcatalogid");
+		sirfLevel = metadata.get("sirflevel");
+		containerSpecification = metadata.get("containerspecification");
+	}
+	
+	public String getSirfLevel() {
+		return sirfLevel;
+	}
+
+	public void setSirfLevel(String sirfLevel) {
+		this.sirfLevel = sirfLevel;
+	}
+
 	public String getContainerSpecification() {
 		return containerSpecification;
 	}
 
-	public String getSirfLevel() {
-		return sirfLevel;
+	public void setContainerSpecification(String containerSpecification) {
+		this.containerSpecification = containerSpecification;
 	}
 
 	public String getSirfCatalogId() {
 		return sirfCatalogId;
 	}
 
-	private String containerSpecification;
+	public void setSirfCatalogId(String sirfCatalogId) {
+		this.sirfCatalogId = sirfCatalogId;
+	}
+
+	@XmlElement
 	private String sirfLevel;
+
+	@XmlElement
+	private String containerSpecification;
+
+	@XmlElement
 	private String sirfCatalogId;
 }
