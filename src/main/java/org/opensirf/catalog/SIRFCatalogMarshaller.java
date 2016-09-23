@@ -38,6 +38,7 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 
+@Deprecated
 public class SIRFCatalogMarshaller {
 	public SIRFCatalogMarshaller(String mediaType) {
 		try
