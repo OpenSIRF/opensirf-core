@@ -15,6 +15,8 @@ lazy val root = (project in file(".")).
 	}
 )
 
+libraryDependencies += "org.glassfish.jersey.media" % "jersey-media-moxy" % "2.25"
+
 crossPaths := false
 publishTo := Some(Resolver.url("Artifactory Realm", new URL("http://200.144.189.109:58082/artifactory"))(Resolver.ivyStylePatterns))
 credentials += Credentials(Path.userHome / ".ivy2" / ".credentials")
